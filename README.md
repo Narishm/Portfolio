@@ -1,7 +1,5 @@
 # This is Lee Holloway's Code Portfolio
 
-Languages presented here are: Visual Basic, C/C++, Java, C#, Python, SQL & MySQL, HTML5, JavaScript, CSS3, and PHP.
-
   The CodeCombat section has the solutions from the CodeCombat.com game.
 
   The Udemy section has code examples and projects I created from tutorials on that site.
