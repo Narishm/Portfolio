@@ -11,3 +11,7 @@
   The School section has code examples I created while I was in college.
 
   The Independent section has code examples and projects I created on my own outside of school or work.
+
+    Each Section is has the languages inside divided up into different folders.
+
+    Data Structures and algorithms can be found in the School and Independent sections.
