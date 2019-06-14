@@ -14,4 +14,4 @@
 
     Each Section is has the languages inside divided up into different folders.
 
-    Data Structures and algorithms can be found in the School and Independent sections.
+    Data Structures and algorithms can be found in the Independent section.
