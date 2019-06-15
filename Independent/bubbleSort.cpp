@@ -13,7 +13,7 @@ void bubble::insertData(int data) {
 
 // Function to display the data
 void bubble::displayData() {
-	for(int counter = 0; counter < numberOfElements; counter++) {
+	for (int counter = 0; counter < numberOfElements; counter++) {
 		cout << arrBubble[counter] << " ";
 	}
 }
@@ -22,8 +22,8 @@ void bubble::displayData() {
 void bubble::bubbleSort() {
 	int i, j, temp;
 	cout << endl;
-	for(i = 0; i < 10; i++) {
-		for(j = 0; j < 10 - i; j++) {
+	for (i = 0; i < 10; i++) {
+		for (j = 0; j < 10 - i; j++) {
 			if (arrBubble[j] > arrBubble[j + 1]) {
 				temp = arrBubble[j];
 				arrBubble[j] = arrBubble[j + 1];

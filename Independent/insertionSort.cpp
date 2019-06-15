@@ -23,7 +23,7 @@ void insertionSort::displayData() {
 void insertionSort::insertSort() {
 	int allElement, subElement;
 	int tempData;
-	for(allElement = 1; allElement < 10; ++allElement) {
+	for (allElement = 1; allElement < 10; ++allElement) {
 		tempData = dataArray[allElement];
 		for (subElement = allElement -1; subElement> = 0; --subElement) {
 			if (dataArray[subElement] > tempData) {
