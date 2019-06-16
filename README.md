@@ -12,6 +12,6 @@
 
   The Independent section has code examples and projects I created on my own outside of school or work.
 
-    Each Section is has the languages inside divided up into different folders.
+    Each Section has the languages inside divided up into different folders.
 
     Data Structures and algorithms can be found in the Independent section.
