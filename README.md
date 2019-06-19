@@ -1,5 +1,7 @@
 # This is Lee Holloway's Code Portfolio
 
+    Work is still being added to this portfolio. -= 6/19/2019 =-
+
   The CodeCombat section has the solutions from the CodeCombat.com game.
 
   The Udemy section has code examples and projects I created from tutorials on that site.
@@ -15,5 +17,3 @@
     Each Section has the languages inside divided up into different folders.
 
     Data Structures and algorithms can be found in the Independent section.
-
-      Work is still being added to this portfolio. -= 6/19/2019 =-
