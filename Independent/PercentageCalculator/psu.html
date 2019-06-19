@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="psu.css" rel="stylesheet" type="text/css">
+    <script src="psu.js"></script>
+    <title>New Yield Calculator</title>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+  <!-- Things to fix! Clean up and comment code, also make it HTML5 and CSS3 compliant. -->
+  <!-- Table tags are using old 'width' syntax instead of css. Tables should be replaced with DIV/CSS combo. -->
+  <!-- Some 'div' tags are nested incorrectly inside of label tags to facilitate css manipulation. -->
+  <body class="bodydark" id="bgcolormain">
+    <table width="100%">
+      <tr>
+        <td colspan="2">
+          <div class="cblue3Dsdark" id="yieldcolor">Yield Calculator</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="switch">
+            <input type="checkbox" id="togBtn">
+            <div class="slider round" onclick="switchLights()">
+              <span class="on" onclick="turnOn()">Light Mode</span>
+              <span class="off" onclick="turnOff()">Dark Mode</span>
+            </div>
+          </label>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <table width="250px">
+            <tr>
+              <td>
+                <div class="blueBorder3Ds" >
+                  <table width="530px" class="noselect">
+                    <tr>
+                      <th>
+                        <table width="320px" class="noselect">
+                          <tr class="bgoffcolordark" >
+                            <th colspan="3">
+                              <div class="cblue3Dtdark" id="tvcolor">TV Service</div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">TV Gold</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button3" onclick="additem(3)">+</button>
+                                    <button class="button buttonRdark" id="button3." onclick="subitem(3)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">TV Silver</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button4" onclick="additem(4)">+</button>
+                                    <button class="button buttonRdark" id="button4." onclick="subitem(4)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">TV Select</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button5" onclick="additem(5)">+</button>
+                                    <button class="button buttonRdark" id="button5." onclick="subitem(5)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Lifestyle</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button6" onclick="additem(6)">+</button>
+                                    <button class="button buttonRdark" id="button6." onclick="subitem(6)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Stream</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button7" onclick="additem(7)">+</button>
+                                    <button class="button buttonRdark" id="button7." onclick="subitem(7)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Choice</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button8" onclick="additem(8)">+</button>
+                                    <button class="button buttonRdark" id="button8." onclick="subitem(8)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </th>
+                      <th rowspan="3">
+                        <table>
+                          <tr class="bgoffcolordark">
+                            <th colspan="3">
+                              <div class="cblue3Dtdark" id="bundlecolor">Bundle</div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Single</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button17" onclick="additem(17)">+</button>
+                                    <button class="button buttonRdark" id="button17." onclick="subitem(17)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Double</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button18" onclick="additem(18)">+</button>
+                                    <button class="button buttonRdark" id="button18." onclick="subitem(18)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Triple</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button19" onclick="additem(19)">+</button>
+                                    <button class="button buttonRdark" id="button19." onclick="subitem(19)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Quad</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button20" onclick="additem(20)">+</button>
+                                    <button class="button buttonRdark" id="button20." onclick="subitem(20)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                        <br />
+                        <table>
+                          <tr>
+                            <td class="bgoffcolordark">
+                              <div class="cblue3Dtdark" id="selfinstallcolor">Self-Install</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="button buttonBdark" id="button16" onclick="additem(16)">+</button>
+                              <button class="button buttonRdark" id="button16." onclick="subitem(16)">-</button>
+                            </td>
+                          </tr>
+                        </table>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="320px">
+                          <tr class="bgoffcolordark">
+                            <th colspan="4">
+                              <div class="cblue3Dtdark" id="internetcolor">Internet Service</div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Gig</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button9" onclick="additem(9)">+</button>
+                                    <button class="button buttonRdark" id="button9." onclick="subitem(9)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Ultra</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button10" onclick="additem(10)">+</button>
+                                    <button class="button buttonRdark" id="button10." onclick="subitem(10)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Plus</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button11" onclick="additem(11)">+</button>
+                                    <button class="button buttonRdark" id="button11." onclick="subitem(11)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Assist</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button12" onclick="additem(12)">+</button>
+                                    <button class="button buttonRdark" id="button12." onclick="subitem(12)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="320px">
+                          <tr class="bgoffcolordark">
+                            <th colspan="3">
+                              <div class="cblue3Dtdark"  id="voicecolor">Voice and Mobile</div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Voice</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button13" onclick="additem(13)">+</button>
+                                    <button class="button buttonRdark" id="button13." onclick="subitem(13)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Mobile</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button14" onclick="additem(14)">+</button>
+                                    <button class="button buttonRdark" id="button14." onclick="subitem(14)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td>
+                              <table>
+                                <tr>
+                                  <td>
+                                    <div class="blue3Dst">Protection</div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <button class="button buttonBdark" id="button15" onclick="additem(15)">+</button>
+                                    <button class="button buttonRdark" id="button15." onclick="subitem(15)">-</button>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <table>
+                          <tr>
+                            <th>
+                              <button class="button2 buttonB2dark" id="button0" onclick="additem(0)">Add Call</button>
+                              <button class="button2 buttonR2dark" id="button0." onclick="subitem(0)">Subtract Call</button>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="button2 buttonB2dark" id="button1" onclick="additem(1);additem(0);">Add Revenue Only</button>
+                              <button class="button2 buttonR2dark" id="button1." onclick="subitem(1);subitem(0);">Subtract Revenue Only</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <button class="button2 buttonB2dark" id="button2" onclick="additem(2);additem(0);">Add Non-Sellable</button>
+                              <button class="button2 buttonR2dark" id="button2." onclick="subitem(2);subitem(0);">Subtract Non-Sellable</button>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </th>
+        <th>
+          <table width="100%">
+            <tr>
+              <td width="33%">
+                <div class="blueBorder3DB" id="border24">
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="blue3DM" id="color24">Yield</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="blue3DB" id="display24">0%</div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td width="33%">
+                <div class="blueBorder3DB" id="border25">
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="blue3DM" id="color25">Gold / Silver</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="blue3DB" id="display25">0%</div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td width="33%">
+                <div class="blueBorder3DB" id="border26">
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="blue3DM" id="color26">Bundle</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="blue3DB" id="display26">0%</div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <tr>
+                <td colspan="3">
+                  <div class="blueBorder3DB">
+                    <table width="100%">
+                      <tr>
+                        <td>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="blue3DM">Single</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3DB" id="display27">0%</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="blue3DM">Double</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3DB" id="display28">0%</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="blue3DM">Triple</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3DB" id="display29">0%</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <hr class="blue3DM" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text0">Calls Taken</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display0">0</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text31">Total PSUs</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display31">0</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text32">Mobile %</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display32">0%</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text1">Revenue Calls</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display1">0</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text2">Non-Sellable</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display2">0</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                        <th>
+                          <table>
+                            <tr>
+                              <td>
+                                <div class="cblue3Dsdark" id="text16">Self-Installs</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="blue3Ds" id="display16">0</div>
+                              </td>
+                            </tr>
+                          </table>
+                        </th>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <table width="100%">
+              <tr>
+                <th colspan="2">
+                  <button class="button2 buttonR2dark" id="button34" onclick="clearAll()">Clear All</button>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text17">Single - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display17">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text18">Double - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display18">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text19">Triple - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display19">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text20">Quad - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display20">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text3">TV Gold - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display3">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text4">TV Silver - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display4">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text5">TV Select - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display5">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text6">Lifestyle - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display6">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text7">Stream - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display7">0</div>
+                      </td>
+                    </tr>
+                  </table>
+                </th>
+                <th>
+                  <table>
+                    <tr>
+                      <td>
+                        <div class="cblue3Dtdark" id="text8">Choice - </div>
+                      </td>
+                      <td>
+                        <div class="blue3Dt" id="display8">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text9">HSI Gig - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display9">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text10">HSI Ultra - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display10">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text11">HSI Plus - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display11">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text12">Assist - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display12">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text13">Voice - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display13">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text14">Mobile - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display14">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan ="6">
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text22">Total TV - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display22">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td colspan="2" class="">
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text23">Total Internet - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display23">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td colspan="2">
+                    <table>
+                      <tr>
+                        <td>
+                          <div class="cblue3Dtdark" id="text15">Mobile Protection - </div>
+                        </td>
+                        <td>
+                          <div class="blue3Dt" id="display15">0</div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="copy">Version 1.1 &copy; 2018 Spirit Nova Designs // Created for Charter Spectrum // For Feature Requests: <a href="mailto:narishm@gmail.com">narishm@gmail.com</a></div>
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
