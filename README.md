@@ -15,3 +15,5 @@
     Each Section has the languages inside divided up into different folders.
 
     Data Structures and algorithms can be found in the Independent section.
+
+      Work is still being added to this portfolio. -= 6/19/2019 =-
